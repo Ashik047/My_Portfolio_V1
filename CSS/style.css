@@ -1,0 +1,536 @@
+/* css reset */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+/* general styles */
+html {
+    font-family: "Rubik", sans-serif;
+    scroll-behavior: smooth;
+    font-size: 1.2rem;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: whitesmoke;
+    background-color: black;
+
+}
+
+.container {
+    width: 100%;
+
+}
+
+
+/* LAYOUT UTILITIES */
+.full--width {
+    width: 100%;
+}
+
+/* text utility */
+.text--center {
+    text-align: center;
+}
+
+.text--justify {
+    text-align: justify;
+}
+
+.text--left {
+    text-align: left;
+}
+
+.text--right {
+    text-align: right;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* visual utilities */
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/* content styling starts */
+.header,
+.about,
+.projects,
+.contact {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 5rem;
+    padding-inline: 3rem;
+}
+
+/* nav styling starts */
+.nav {
+    /* fix them to right side and allot full height*/
+    height: 100vh;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: transparent;
+    margin-right: 1.2rem;
+}
+
+.nav .nav__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* styling each nav buttons */
+.nav .nav__btn {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: none;
+}
+
+/* styling the nav links to boxes and adding transition starts*/
+.nav .nav__links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    right: -1000px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.nav .nav-a {
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: #1B1B1B;
+    padding: 1.8rem;
+    padding-inline: 6rem;
+    border: 1px solid #9CA3AF;
+
+}
+
+.nav .nav-a:first-child {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.nav .nav-a:last-child {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+/* styling the nav links to boxes and adding transition ends*/
+
+/* nav hover condition starts */
+:is(.nav .nav__btns:hover, .nav .nav__btns:focus-within, .nav .nav__btns:active) .nav__links {
+    right: 0;
+    opacity: 1;
+}
+
+.nav .nav-a:hover,
+.nav .nav-a:focus,
+.nav .nav-a:active {
+    background-color: #9CA3AF;
+    color: #1B1B1B;
+}
+
+/* nav hover condition ends */
+/* nav styling ends */
+
+/* First page styling starts*/
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 3.75rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../Images/bg-top.avif);
+    background-size: cover;
+    background-position: 60%;
+
+}
+
+.header__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header__name {
+    border: 2px solid #39FF14;
+    max-width: min-content;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    color: #39FF14;
+}
+
+.header__details {
+    color: #9CA3AF;
+    width: 31.25rem;
+}
+
+.header__download-link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* first page link turned to button */
+.header__link {
+    max-width: min-content;
+    border: 1px solid whitesmoke;
+    padding: 1.2rem;
+    border-radius: 1rem;
+}
+
+/* first page link hover */
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
+    border: none;
+    color: #1B1B1B;
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+
+:is(.header__link:hover,
+    .header__link:focus,
+    .header__link:active) .header__download-link {
+    color: #1B1B1B;
+    font-weight: bold;
+}
+
+/* First page styling ends*/
+
+/* about styling starts*/
+.about {
+    background-color: #1B1B1B;
+}
+
+.about__details {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+.section-h2 {
+    margin-bottom: 5rem;
+}
+
+/* my name */
+.section-h2 span {
+    color: #39FF14;
+    font-size: 2.4rem;
+}
+
+.about__para {
+    color: #9CA3AF;
+    margin-bottom: 1.2rem;
+}
+
+/* assigning container width */
+.about__content {
+    width: 31.25rem;
+}
+
+.about__skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 31.25rem;
+    height: 400px;
+    overflow-y: auto;
+    scrollbar-color: #333 #1B1B1B;
+    padding-right: 10px;
+    /* assigning container width */
+}
+
+
+.about__skill-text {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.about__skill-bar {
+    position: relative;
+    /* for the skill-bar to overlap */
+    margin-bottom: 3rem;
+}
+
+.about__basebar {
+    width: 100%;
+    height: 0.3rem;
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    position: absolute;
+    /* for the skill-bar to overlap */
+}
+
+.about__skillbar-html {
+    background-color: #39FF14;
+    width: 85%;
+}
+
+.about__skillbar-css {
+    background-color: #39FF14;
+    width: 80%;
+}
+
+.about__skillbar-js {
+    background-color: #39FF14;
+    width: 45%;
+}
+
+.about__skillbar-py {
+    background-color: #39FF14;
+    width: 55%;
+}
+
+.about__skillbar-c {
+    background-color: #39FF14;
+    width: 50%;
+}
+
+.about__skillbar-cpp {
+    background-color: #39FF14;
+    width: 65%;
+}
+
+.about__skillbar-sql {
+    background-color: #39FF14;
+    width: 45%;
+}
+
+/* about styling starts*/
+
+/* projects styling starts*/
+.projects__details {
+    margin: 5rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: calc(100vh - 326px);
+    width: 60rem;
+    overflow-y: auto;
+    scrollbar-color: #333 black;
+}
+
+/* styling each project and transition starts */
+.projects__project {
+    width: 26rem;
+    display: grid;
+    place-content: center;
+    transition: opacity 0.5s ease-in;
+}
+
+.project__image {
+    width: 25rem;
+    border-radius: 1rem;
+    height: auto;
+}
+
+.project__h4 {
+    width: 26rem;
+    color: whitesmoke;
+    opacity: 0;
+    padding: 0.6rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.project__link {
+    width: 26rem;
+    aspect-ratio: 1.7/1;
+    padding: 0.6rem;
+    background-color: #333;
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects__project p {
+    width: 26rem;
+    color: #9CA3AF;
+    opacity: 0;
+    padding: 0.6rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+/* project hovering starts */
+:is(.projects__project:hover, .projects__project:active, .projects__project:focus) :is(.project__h4, .project__text, .project__link) {
+    opacity: 1;
+    background-color: #333;
+    padding: 0.6rem;
+}
+
+:is(.projects__project:hover, .projects__project:active, .projects__project:focus) .project__link {
+    border-radius: 0;
+}
+
+.projects__project:hover,
+.projects__project:active,
+.projects__project:focus {
+    background-color: transparent;
+}
+
+/* project hovering ends */
+/* styling each project and transition ends */
+/* projects styling ends*/
+
+/* contact styling starts*/
+.contact {
+    background-color: #1B1B1B;
+}
+
+.contact__parts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* contact details part */
+.contact__parta {
+    color: #9CA3AF;
+
+}
+
+.contact__parta p {
+    margin-bottom: 3rem;
+
+}
+
+.contact__parta-icons i {
+    color: #9CA3AF;
+    font-size: 2.4rem;
+    margin-right: 1.2rem;
+
+}
+
+/* message me part */
+.contact__partb {
+    transform: translateY(-50px);
+}
+
+.contact__form {
+    margin-top: 5rem;
+}
+
+.contact__form-element {
+    margin-bottom: 1.2rem;
+    width: 25rem;
+    height: 2rem;
+    background-color: black;
+    padding: 1.2rem;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.contact__textarea {
+    height: 200px;
+}
+
+.contact__form-btn {
+    width: 25rem;
+    height: 1.5rem;
+    background-color: #39FF14;
+    color: black;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+/* social media part */
+.contact__media {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.contact__media-icons {
+    color: whitesmoke;
+    padding-inline: 1.2rem;
+    width: 3.125rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* social media hover effect */
+.contact__media-icons:hover,
+.contact__media-icons:focus,
+.contact__media-icons:active {
+    color: black;
+    padding-inline: 1.2rem;
+    background-color: whitesmoke;
+}
+
+/* contact styling ends */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__content {
+    text-align: center;
+    margin-top: 50px;
+    width: 550px;
+}
+
+.footer__content p {
+    margin-top: 10px;
+}
+
+.contact {
+    padding-bottom: 20px;
+}
