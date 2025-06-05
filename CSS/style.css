@@ -411,12 +411,12 @@ body {
     border-radius: 0;
 }
 
-.projects__project:hover,
+/* .projects__project:hover,
 .projects__project:active,
 .projects__project:focus {
     background-color: transparent;
 }
-
+ */
 /* project hovering ends */
 /* styling each project and transition ends */
 /* projects styling ends*/
